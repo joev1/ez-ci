@@ -1,21 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-nginx
+  name: some-app
 spec:
   selector:
     matchLabels:
-      run: my-nginx
+      run: some-app
   replicas: 1
   template:
     metadata:
       labels:
-        run: my-nginx
+        run: some-app
     spec:
       containers:
-      - name: nginx
-        image: nginx
-        imagePullPolicy: Never
+      - name: some-app
+        image: joeveror/some-app
         ports:
         - containerPort: 443
         - containerPort: 80
